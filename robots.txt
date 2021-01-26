@@ -1,0 +1,4 @@
+user-Agent:*
+Allow: /
+
+Sitemap: https://facembti.com/sitemap.xml
