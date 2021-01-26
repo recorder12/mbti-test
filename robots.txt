@@ -1,4 +1,4 @@
-user-Agent:*
-Allow: /
+User-agent: *
+Allow:/
 
 Sitemap: https://facembti.com/sitemap.xml
