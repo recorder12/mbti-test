@@ -310,3 +310,8 @@ input:checked + .slider:before {
 		font-size: 1.5rem;
   color: #E7169E;
 }
+
+.ad-banner{
+	width: 640px;
+	margin:0 auto;
+}
