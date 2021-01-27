@@ -314,7 +314,3 @@ input:checked + .slider:before {
 .ad-banner{
 	margin:0 auto;
 }
-.ad-banner-top{
-	margin:0 auto;
-	width: 800px;
-}
