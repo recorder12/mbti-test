@@ -9,17 +9,17 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 
-    <title>얼굴형으로 알아보는 MBTI 테스트</title>
+    <title>얼굴형(얼굴상)으로 알아보는 MBTI 테스트</title>
 	<link rel="canonical" href="https://www.facembti.com/index.html">
 	<meta name='title' content="MBTI test 테스트">
 	<meta name="subject" content="얼굴상으로 보는 인공지능 MBTI 성격 테스트, 나의 얼굴상으로 간단히 성격 테스트를 해보세요! ">
-	<meta name="keywords" content="MBTI test, MBTI 테스트, 성격 테스트, 얼굴상, 얼굴 사진, 얼굴형태, face shape, 인공지능 얼굴상, 관상, 인공지능, AI, 간단한 테스트, 재미">
+	<meta name="keywords" content="MBTI test, MBTI 테스트, 성격 테스트, 얼굴상, 얼굴형, 얼굴, 얼굴 사진, 얼굴형태, face shape, 인공지능 얼굴상, 관상, 인공지능, AI 테스트, 궁합, face, face shape, oval, rectangle, round, square, heart">
 	<meta name="author" content="recorder12">
-	<meta name="description" content="MBTI 테스트 궁금하긴 한데 너무 긴 질문에 답해야해서 지치셔서 포기하시지 않으셨나요? 본인 얼굴 사진 단 한장으로 빠르게 본인의 MBTI, 성격 테스트를 해볼 수 있습니다. 동양에서 관상을 연구하듯이 해외에선 얼굴형태 (face shape)에 따른 사람의 성격을 가늠하는 연구가 오랫동안 지속되어 왔습니다.본 사이트는 이것을 이용해 여러분의 얼굴상을 인공지능으로 판단해서 성격 테스트 결과를 제공합니다.">
+	<meta name="description" content="MBTI 테스트 궁금하긴 한데 너무 긴 질문들에 포기하시지 않으셨나요? 얼굴 사진 단 한장으로 MBTI, 성격 테스트를 해볼 수 있습니다. 동양에서 관상을 연구하듯이 해외에선 얼굴형태 (face shape)에 따른 사람의 성격을 가늠하는 연구가 있습니다. 그 결과를 바탕으로 여러분의 얼굴상을 인공지능으로 판단해서 성격 테스트 결과를 제공합니다.">
 	<meta property="og:url" content="https://facembti.com">
 	<meta property="og:type" content="website">
 	<meta property="og:title" content="MBTI 테스트">
-	<meta property="og:description" content="MBTI 테스트 궁금하긴 한데 너무 긴 질문에 답해야해서 지치셔서 포기하시지 않으셨나요? 본인 얼굴 사진 단 한장으로 빠르게 본인의 MBTI, 성격 테스트를 해볼 수 있습니다. 동양에서 관상을 연구하듯이 해외에선 얼굴형태 (face shape)에 따른 사람의 성격을 가늠하는 연구가 오랫동안 지속되어 왔습니다. 본 사이트는 이것을 이용해 여러분의 얼굴상을 인공지능으로 판단해서 성격 테스트 결과를 제공합니다.">
+	<meta property="og:description" content="MBTI 테스트 궁금하긴 한데 너무 긴 질문들에 포기하시지 않으셨나요? 얼굴 사진 단 한장으로 MBTI, 성격 테스트를 해볼 수 있습니다. 동양에서 관상을 연구하듯이 해외에선 얼굴형태 (face shape)에 따른 사람의 성격을 가늠하는 연구가 있습니다. 그 결과를 바탕으로 여러분의 얼굴상을 인공지능으로 판단해서 성격 테스트 결과를 제공합니다.">
     <link rel="stylesheet" href="style.css">
 	<!-- Go to www.addthis.com/dashboard to customize your tools -->
 	<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-600ea53daf85d0a7"></script>
@@ -68,11 +68,19 @@
 	</div>
 	
 	
+	<section class="language-select">
+		<label for="language">Choose Language :</label>
+		<select onchange="changeLag(this)" id="Language">
+			<option value="Korean">한국어</option>
+			<option value="English">English</option>
+  		</select>
+	</section>
+	
     <section class="mb-5 section">
-        <h1 class="title">얼굴형으로 보는 MBTI 테스트!</h1>
-        <h2 class="subtitle">나의 MBTI 성향을 얼굴 사진 한 장으로 알아보자!!</h2>
+        <h1 class="title" id="title">얼굴형으로 보는 MBTI 테스트!</h1>
+        <h2 class="subtitle" id="subtitle">나의 MBTI 성향을 얼굴 사진 한 장으로 알아보자!!</h2>
     </section>
-    
+	
 	
     <section class="d-flex justify-content-center">
         <p class="d-flex align-items-center pr-3 female-text">Female</p>
@@ -94,7 +102,7 @@
             <input class="file-upload-input" type='file' onchange="readURL(this);" accept="image/*" />
             <div class="drag-text">
                 <img src="img/upload.svg" class="mt-5 pt-5 upload">
-                <h3 class="mb-5 pb-5 pt-4  upload-text">얼굴 사진을 올려놓거나 눌러서 업로드하세요!</h3>
+                <h3 class="mb-5 pb-5 pt-4  upload-text" id="upload-text">얼굴 사진을 올려놓거나 눌러서 업로드하세요!</h3>
             </div>
         </div>
         <div class="file-upload-content">
@@ -109,11 +117,11 @@
 			
             <div class="d-flex flex-column pt-3 image-title-wrap">
                 <button type="button p-2" onclick="window.location.reload();" class="try-again-btn">
-					<span class="try-again-text">다른 사진으로 재시도</span>
+					<span class="try-again-text" id="try-again-text">다른 사진으로 재시도</span>
                 </button>
 				
 				 <button type="button " class="mt-2 mbti-site" onclick="window.open('https://www.16personalities.com/','_blank')">
-					 <span class="mbti-site-text">나는 이 결과를 받아들일 수 없어!!</span>
+					 <span class="mbti-site-text" id="mbti-site-text">나는 이 결과를 받아들일 수 없어!!</span>
 				</button>
             </div>
         </div>
@@ -122,11 +130,11 @@
 
 	
 	<section class="mt-5 youtube">
-		<h4 class="reference">
+		<h4 class="reference" id="reference">
 			본 서비스는 Google의 인공지능 teachable machine 2.0과 조코딩님의 코드를 활용했습니다.</h4>
         <div class="container mt-5 youtube-cover d-flex flex-row-reverse">
             <img src="img/youtube-copy.jpg" alt="youtube-icon" class="youtube-icon">
-            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link">조코딩 유튜브 채널</a>
+            <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg" class="youtube-link" id="youtube-link">조코딩 유튜브 채널</a>
         </div>
     </section>
 	
@@ -174,6 +182,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
     <script>
+		
         function readURL(input) {
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
@@ -187,6 +196,7 @@
 				init().then(()=>{
 					predict();
 				});
+				
 				
             } else {
                 removeUpload();
@@ -210,21 +220,54 @@
         // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
         // the link to your model provided by Teachable Machine export panel
 		let URL;
-		
+		let language = "Korea";
         const urlMale = "https://teachablemachine.withgoogle.com/models/qQIm0Tnq-/";
 		const  urlFemale = "https://teachablemachine.withgoogle.com/models/JAdgziaDA/";
         let model, webcam, labelContainer, maxPredictions;
         // Load the image model and setup the webcam
+		
+		async function changeLag(input){
+			
+			language = input.value;
+			const title = document.getElementById("title");
+			const subtitle = document.getElementById("subtitle");
+			const tryAgain = document.getElementById("try-again-text");
+			const Mbtilink = document.getElementById("mbti-site-text");
+			const uploadText = document.getElementById("upload-text");
+			const reference = document.getElementById("reference");
+			const youtube = document.getElementById("youtube-link");
+			
+			if (language == "English"){
+				title.innerHTML = "MBTI Test by Face Shape!";
+				subtitle.innerHTML ="Find out your personality with a picture!"
+				tryAgain.innerHTML = "Retry with other pucture";
+				uploadText.innerHTML = "Drag or upload your picture";
+				reference.innerHTML = "This project includes Google Api service teachable machine 0.2 and Jocoding's technical support!";
+				youtube.innerHTML = "Jocoding Youtube Channel";
+				Mbtilink.innerHTML = "I don't believe this result!";
+			}
+				
+			else{
+				title.innerHTML = "얼굴형으로 보는 MBTI 테스트!";
+				subtitle.innerHTML ="나의 MBTI 성향을 얼굴 사진 한 장으로 알아보자!!"
+				tryAgain.innerHTML = "다른 사진으로 재시도";
+				uploadText.innerHTML = "얼굴 사진을 올려놓거나 눌러서 업로드하세요!";
+				reference.innerHTML = "본 서비스는 Google의 인공지능 teachable machine 2.0과 조코딩님의 코드를 활용했습니다.";
+				youtube.innerHTML = "조코딩 유튜브 채널";
+				Mbtilink.innerHTML = "나는 이 결과를 받아들일 수 없어!!";
+				
+				}
+		}
+		
         async function init() {
 			if (document.getElementById("gender").checked) {
-				console.log("checked, male");
+				// console.log("checked, male");
                 URL = urlMale;
             } else {
                 URL = urlFemale;
-				console.log("uncheked, female");
+				// console.log("uncheked, female");
             }
 			
-			console.log(URL);
             const modelURL = URL + "model.json";
             const metadataURL = URL + "metadata.json";
             // load the model and metadata
@@ -232,12 +275,26 @@
             // or files from your local hard drive
             // Note: the pose library adds "tmImage" object to your window (window.tmImage)
             model = await tmImage.load(modelURL, metadataURL);
-            maxPredictions = model.getTotalClasses();
-            labelContainer = document.getElementById("label-container");
-            for (let i = 0; i < maxPredictions; i++) { // and class labels
+            // maxPredictions = model.getTotalClasses();
+			
+			labelContainer = document.getElementById("label-container");
+			
+			if (language == "English"){
+				$('.result-message').html("Checking your face's length... ");
+			}
+			else{
+				$('.result-message').html("어디 보오자아...흠...");
+			}
+			
+            
+            for (let i = 0; i < 2; i++) { // add div for display results
                 labelContainer.appendChild(document.createElement("div"));
             }
+				
         }
+		
+		
+		
         // run the webcam image through the image model
         async function predict() {
             // predict can take in an image, video or canvas html element
@@ -382,9 +439,8 @@
 			$('.result-message').html(resultMessage);
 			
 			labelContainer.childNodes[0].innerHTML = resultArray[1];
-			labelContainer.childNodes[1].innerHTML = "출처: https://www.16personalities.com/";
+			labelContainer.childNodes[1].innerHTML = "by 16personalities (https://www.16personalities.com/)";
 			
-				
         }
     </script>
 

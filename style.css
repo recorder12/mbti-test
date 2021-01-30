@@ -3,6 +3,9 @@ body {
   background-color: #ffffff;
 }
 
+
+
+
 .file-upload {
     padding: 15% 3%;
     margin: 0 auto;
@@ -134,8 +137,16 @@ body {
     border-color: #ffffff;
 }
 
+.language-select{
+	font-family: NanumSquareR;
+  line-height: 1.67;
+  text-align: center;
+  color: #35465d;
+	margin-top: 30px
+}
+
 .section {
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .title {
