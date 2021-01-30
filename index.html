@@ -241,7 +241,7 @@
 				
 				title.innerHTML = "MBTI Test by Face Shape!";
 				subtitle.innerHTML ="Find out your personality with a picture!"
-				tryAgain.innerHTML = "Retry with other pucture";
+				tryAgain.innerHTML = "Retry with other picture";
 				uploadText.innerHTML = "Drag or upload your picture";
 				reference.innerHTML = "This project includes Google Api service teachable machine 0.2 and Jocoding's technical support!";
 				youtube.innerHTML = "Jocoding Youtube Channel";
@@ -437,10 +437,9 @@
 			
 			const resultArray = result[classPrediction];
 			
-			console.log(resultArray[0]);
 			
 			if(language == "English"){
-				const resultMessage = "You are " + resultArray[0] + " personality!!";
+				const resultMessage = "You are " + resultArray[0] + " !!";
 				$('.result-message').html(resultMessage);
 				labelContainer.childNodes[0].innerHTML = resultArray[2];
 			}else{
