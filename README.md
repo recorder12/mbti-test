@@ -1,4 +1,4 @@
-FaceMbti.com
+#FaceMbti.com
 
       This is a website that provides the MBTI test result based on the user's face shape. 
       Existing MBTI tests require too many and boring questions. 
